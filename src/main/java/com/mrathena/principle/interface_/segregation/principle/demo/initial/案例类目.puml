@@ -1,0 +1,32 @@
+@startuml
+
+interface Interface1 {
+	+ void method1()
+	+ void method2()
+	+ void method3()
+}
+class A {
+	+ void useMethod1(Interface1 i)
+	+ void useMethod2(Interface1 i)
+}
+class B {
+	+ void method1()
+	+ void method2()
+	+ void method3()
+}
+class C{
+	+ void useMethod1(Interface1 i)
+	+ void useMethod3(Interface1 i)
+}
+class D {
+	+ void method1()
+	+ void method2()
+	+ void method3()
+}
+
+Interface1 <|-- B
+Interface1 <|-- D
+Interface1 <.. A
+Interface1 <.. C
+
+@enduml

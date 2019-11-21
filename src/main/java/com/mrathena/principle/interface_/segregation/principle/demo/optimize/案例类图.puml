@@ -1,0 +1,38 @@
+@startuml
+
+interface Interface1 {
+	+ void method1()
+}
+interface Interface2 {
+	+ void method2()
+}
+interface Interface3 {
+	+ void method3()
+}
+class A {
+	+ void useMethod1(Interface1 i)
+	+ void useMethod2(Interface2 i)
+}
+class B {
+	+ void method1()
+	+ void method2()
+}
+class C{
+	+ void useMethod1(Interface1 i)
+	+ void useMethod3(Interface3 i)
+}
+class D {
+	+ void method1()
+	+ void method3()
+}
+
+Interface1 <|-- B : 实现
+Interface2 <|-- B : 实现
+Interface1 <|-- D : 实现
+Interface3 <|-- D : 实现
+Interface1 <.. A : 依赖(就是作为参数传入)
+Interface2 <.. A : 依赖
+Interface1 <.. C : 依赖
+Interface3 <.. C : 依赖
+
+@enduml
