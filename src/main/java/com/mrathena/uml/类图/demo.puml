@@ -1,0 +1,67 @@
+@startuml
+
+package 继承与实现 {
+  abstract class Person {
+  	- String name
+  }
+  interface Codeable {
+  	+ void code()
+  }
+  class Coder
+  Person <|-- Coder : Coder继承了Person(泛化)
+  Codeable <|.. Coder : Coder实现了Codeable
+}
+
+package 依赖 {
+	class Class {
+		- Class5 class
+		+ Class3 modify(Class2 class)
+	}
+	class Class2
+	class Class3
+	class Class4
+	note top of Class4 : public Class3 modify(Class2 class) {Class4 class4 = new Class4();}
+	Class2 <.. Class : 依赖(入参)
+	Class3 <.. Class : 依赖(返回值)
+	Class4 <.. Class : 依赖(局部变量)
+	Class5 <.. Class : 依赖(成员变量)
+}
+
+package 关联 {
+	class User
+    class Id
+    User -- Id : User和Id有关联
+    class User2 {
+    	- Id Id
+    }
+    User2 --> Id : User2关联Id
+    class Id2 {
+    	- User user
+    }
+    User <-- Id2 : Id2关联User
+    class User3 {
+    	- Id3 id
+    }
+    class Id3 {
+    	- User3 user
+    }
+    User3 <--> Id3 : User3和Id3双向关联
+}
+
+package 聚合 {
+	class WildGoose
+    class WildGooseGroup {
+    	- List<WildGoose> wildGooseList
+    }
+    WildGooseGroup o-- WildGoose : WildGoose聚合于WildGooseGroup
+}
+
+package 组合 {
+	class Animal {
+    	- Head head
+    }
+    class Head
+    Head --* Animal : Head组合于Animal
+}
+
+@enduml
