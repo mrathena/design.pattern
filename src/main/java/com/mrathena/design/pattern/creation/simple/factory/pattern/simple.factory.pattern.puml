@@ -1,0 +1,12 @@
+@startuml
+
+interface Product
+class ConcreteProductA implements Product
+class ConcreteProductB implements Product
+class Factory {
+    + Product getProduct(String productName)
+    + product getProductByClassName(String productClassName)
+}
+Factory ..> Product
+
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+
+interface Product
+class ConcreteProductA implements Product
+class ConcreteProductB implements Product
+interface Factory {
+    Product create();
+}
+class ConcreteFactoryA implements Factory {
+    + Product create();
+}
+class ConcreteFactoryB implements Factory {
+    + Product create();
+}
+Factory ..> Product
+ConcreteFactoryA ..> Product
+ConcreteFactoryB ..> Product
+ConcreteFactoryA ..> ConcreteProductA
+ConcreteFactoryB ..> ConcreteProductB
+
+@enduml
