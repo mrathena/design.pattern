@@ -6,9 +6,9 @@ package com.mrathena.design.pattern.build.factory.method.pattern.implement;
 public class Client {
 
 	public static void main(String[] args) {
-		Product product = new ConcreteFactoryA().create();
+		AbstractProduct product = new ConcreteFactoryA().getProduct();
 		System.out.println(product);
-		System.out.println(new ConcreteFactoryB().create());
+		System.out.println(new ConcreteFactoryB().getProduct());
 	}
 
 }

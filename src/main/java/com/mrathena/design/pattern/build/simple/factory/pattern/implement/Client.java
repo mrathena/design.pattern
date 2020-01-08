@@ -6,14 +6,14 @@ package com.mrathena.design.pattern.build.simple.factory.pattern.implement;
 public class Client {
 
 	public static void main(String[] args) {
-		Product a = Factory.getProduct("A");
+		AbstractProduct a = Factory.getProduct("A");
 		System.out.println(a);
-		Product b = Factory.getProduct("B");
+		AbstractProduct b = Factory.getProduct("B");
 		System.out.println(b);
 
-		Product a2 = Factory.getProductByClassName("com.mrathena.design.pattern.creation.simple.factory.pattern.implement.ConcreteProductA");
+		AbstractProduct a2 = Factory.getProductByClassName("com.mrathena.design.pattern.creation.simple.factory.pattern.implement.ConcreteProductA");
 		System.out.println(a2);
-		Product b2 = Factory.getProductByClassName("com.mrathena.design.pattern.creation.simple.factory.pattern.implement.ConcreteProductB");
+		AbstractProduct b2 = Factory.getProductByClassName("com.mrathena.design.pattern.creation.simple.factory.pattern.implement.ConcreteProductB");
 		System.out.println(b2);
 	}
 

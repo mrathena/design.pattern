@@ -1,16 +1,16 @@
 @startuml
 
-interface Product
-class ConcreteProductA implements Product
-class ConcreteProductB implements Product
-interface Factory {
-    Product create();
+abstract class Product
+class ConcreteProductA extends Product
+class ConcreteProductB extends Product
+abstract class Factory {
+    + Product getProduct();
 }
-class ConcreteFactoryA implements Factory {
-    + Product create();
+class ConcreteFactoryA extends Factory {
+    + Product getProduct();
 }
-class ConcreteFactoryB implements Factory {
-    + Product create();
+class ConcreteFactoryB extends Factory {
+    + Product getProduct();
 }
 Factory ..> Product
 ConcreteFactoryA ..> Product

@@ -1,8 +1,8 @@
 @startuml
 
-interface Product
-class ConcreteProductA implements Product
-class ConcreteProductB implements Product
+abstract class Product
+class ConcreteProductA extends Product
+class ConcreteProductB extends Product
 class Factory {
     + Product getProduct(String productName)
     + product getProductByClassName(String productClassName)

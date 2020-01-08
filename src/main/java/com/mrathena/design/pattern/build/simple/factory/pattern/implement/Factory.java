@@ -5,7 +5,7 @@ package com.mrathena.design.pattern.build.simple.factory.pattern.implement;
  */
 public class Factory {
 
-	public static Product getProduct(String productName) {
+	public static AbstractProduct getProduct(String productName) {
 		switch (productName) {
 			case "A":
 				return new ConcreteProductA();
@@ -17,9 +17,9 @@ public class Factory {
 		return null;
 	}
 
-	public static Product getProductByClassName(String productClassName) {
+	public static AbstractProduct getProductByClassName(String productClassName) {
 		try {
-			return (Product) Class.forName(productClassName).newInstance();
+			return (AbstractProduct) Class.forName(productClassName).newInstance();
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
 			e.printStackTrace();
 		}

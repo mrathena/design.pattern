@@ -3,9 +3,9 @@ package com.mrathena.design.pattern.build.factory.method.pattern.implement;
 /**
  * @author mrathena on 2020/1/8 14:42
  */
-public class ConcreteFactoryB implements Factory {
+public class ConcreteFactoryB extends AbstractFactory {
 	@Override
-	public Product create() {
+	public AbstractProduct getProduct() {
 		return new ConcreteProductB();
 	}
 }
