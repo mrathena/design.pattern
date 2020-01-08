@@ -8,5 +8,7 @@ class Factory {
     + product getProductByClassName(String productClassName)
 }
 Factory ..> Product
+Factory ..> ConcreteProductA
+Factory ..> ConcreteProductB
 
 @enduml

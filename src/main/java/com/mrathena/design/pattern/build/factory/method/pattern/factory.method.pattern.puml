@@ -4,13 +4,13 @@ abstract class Product
 class ConcreteProductA extends Product
 class ConcreteProductB extends Product
 abstract class Factory {
-    + Product getProduct();
+    + Product getProduct()
 }
 class ConcreteFactoryA extends Factory {
-    + Product getProduct();
+    + Product getProduct()
 }
 class ConcreteFactoryB extends Factory {
-    + Product getProduct();
+    + Product getProduct()
 }
 Factory ..> Product
 ConcreteFactoryA ..> Product
