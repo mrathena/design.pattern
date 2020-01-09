@@ -5,10 +5,6 @@ package com.mrathena.design.pattern.creational.patterns.singleton.pattern.implem
  */
 public class Singleton {
 
-	public static void main(String[] args) {
-		System.out.println(Singleton.getInstance());
-	}
-
 	private Singleton () {}
 
 	private static Singleton instance;

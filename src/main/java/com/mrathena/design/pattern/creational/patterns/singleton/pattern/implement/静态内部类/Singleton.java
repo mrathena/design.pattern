@@ -1,13 +1,11 @@
 package com.mrathena.design.pattern.creational.patterns.singleton.pattern.implement.静态内部类;
 
+import java.io.Serializable;
+
 /**
  * @author mrathena on 2020-01-06 22:12
  */
-public class Singleton {
-
-	public static void main(String[] args) {
-		System.out.println(Singleton.getInstance());
-	}
+public class Singleton implements Serializable {
 
 	private Singleton () {}
 

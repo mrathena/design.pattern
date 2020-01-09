@@ -15,8 +15,4 @@ public enum Singleton {
 		System.out.println("singleton implements with enum");
 	}
 
-	public static void main(String[] args) {
-		Singleton.INSTANCE.method();
-	}
-
 }
