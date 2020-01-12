@@ -1,11 +1,11 @@
 @startuml
 
-abstract class Product
-class ConcreteProductA extends Product
-class ConcreteProductB extends Product
+abstract class AbstractProduct
+class ConcreteProductA extends AbstractProduct
+class ConcreteProductB extends AbstractProduct
 class Factory {
-    + Product getProduct(String productName)
-    + product getProductByClassName(String productClassName)
+    + AbstractProduct getProduct(String productName)
+    + AbstractProduct getProductByClassName(String productClassName)
 }
 Factory ..> Product
 Factory ..> ConcreteProductA

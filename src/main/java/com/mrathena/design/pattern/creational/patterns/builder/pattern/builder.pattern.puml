@@ -1,0 +1,33 @@
+@startuml
+
+class Product {
+    - String field1
+    - String field2
+    - string field3
+    - String field4
+    - String field5
+    - String field6
+}
+abstract class AbstractBuilder {
+    # Product product = new Product()
+    + abstract void step1()
+    + abstract void step2()
+    + abstract void step3()
+    + Product getProduct()
+}
+class ConcreteBuilder extends AbstractBuilder {
+    + void step1()
+    + void step2()
+    + void step3()
+}
+class Directory {
+    - AbstractBuilder builder
+    + Product getProduct()
+}
+
+AbstractBuilder *-- Product
+ConcreteBuilder ..> Product
+Directory o-- AbstractBuilder
+Directory ..> Product
+
+@enduml
