@@ -7,7 +7,7 @@ public class Client {
 
 	public static void main(String[] args) {
 		Director director = new Director(new ConcreteBuilder());
-		System.out.println(director.getProduct());
+		System.out.println(director.build());
 	}
 
 }

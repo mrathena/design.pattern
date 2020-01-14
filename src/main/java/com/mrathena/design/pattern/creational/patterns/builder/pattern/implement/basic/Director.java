@@ -11,7 +11,7 @@ public class Director {
 		this.builder = builder;
 	}
 
-	public Product getProduct() {
+	public Product build() {
 		builder.buildHead();
 		builder.buildBody();
 		builder.buildFoot();
