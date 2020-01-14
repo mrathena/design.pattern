@@ -1,28 +1,27 @@
 @startuml
 
 class Product {
-    - String field1
-    - String field2
-    - string field3
-    - String field4
-    - String field5
-    - String field6
+    - String head
+    - String body
+    - string arm
+    - String leg
+    - String foot
 }
 abstract class AbstractBuilder {
     # Product product = new Product()
-    + abstract void step1()
-    + abstract void step2()
-    + abstract void step3()
-    + Product getProduct()
+    + abstract void buildHead()
+    + abstract void buildBody()
+    + abstract void buildFoot()
+    + Product build() return product
 }
 class ConcreteBuilder extends AbstractBuilder {
-    + void step1()
-    + void step2()
-    + void step3()
+    + void buildHead()
+    + void buildBody()
+    + void buildFoot()
 }
 class Directory {
     - AbstractBuilder builder
-    + Product getProduct()
+    + Product build() return builder.build()
 }
 
 AbstractBuilder *-- Product

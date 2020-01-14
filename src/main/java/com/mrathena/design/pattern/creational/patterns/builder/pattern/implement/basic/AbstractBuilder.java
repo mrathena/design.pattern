@@ -3,15 +3,17 @@ package com.mrathena.design.pattern.creational.patterns.builder.pattern.implemen
 /**
  * @author mrathena on 2020/1/12 16:42
  */
-public abstract class AbstractBuilder {
+abstract public class AbstractBuilder {
 
 	protected Product product = new Product();
 
-	public abstract void createHead();
+	abstract public void buildHead();
 
-	public abstract void createBody();
+	abstract public void buildBody();
 
-	public Product getProduct() {
+	abstract public void buildFoot();
+
+	public Product build() {
 		return product;
 	}
 

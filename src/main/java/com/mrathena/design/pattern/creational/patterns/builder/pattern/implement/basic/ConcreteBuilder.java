@@ -6,18 +6,23 @@ package com.mrathena.design.pattern.creational.patterns.builder.pattern.implemen
 public class ConcreteBuilder extends AbstractBuilder {
 
 	@Override
-	public void createHead() {
+	public void buildHead() {
 		product.setHead("高达Head");
-		System.out.println("第一步CreateHead");
+		System.out.println("buildHead");
 	}
 
 	@Override
-	public void createBody() {
+	public void buildBody() {
 		product.setBody("高达Body");
 		product.setArm("高达Arm");
 		product.setLeg("高达Leg");
+		System.out.println("buildBody");
+	}
+
+	@Override
+	public void buildFoot() {
 		product.setFoot("高达Foot");
-		System.out.println("第二步CreatedBody");
+		System.out.println("buildFoot");
 	}
 
 }

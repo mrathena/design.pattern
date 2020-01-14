@@ -12,9 +12,10 @@ public class Director {
 	}
 
 	public Product getProduct() {
-		builder.createHead();
-		builder.createBody();
-		return builder.getProduct();
+		builder.buildHead();
+		builder.buildBody();
+		builder.buildFoot();
+		return builder.build();
 	}
 
 }
