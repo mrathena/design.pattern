@@ -1,0 +1,18 @@
+@startuml
+
+class Adaptee {
+    + void foo()
+}
+interface Target {
+    + void bar()
+}
+class Adapter implements Target {
+    - Adaptee adaptee = new Adaptee();
+    + void bar() {xxxx; adaptee.foo(); xxxx;}
+}
+class Client
+
+Adaptee --* Adapter
+Client ..> Adapter
+
+@enduml

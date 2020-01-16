@@ -1,0 +1,16 @@
+@startuml
+
+class Adaptee {
+    + void foo()
+}
+interface Target {
+    + void bar()
+}
+class Adapter extends Adaptee implements Target {
+    + void bar() {xxxx; super.foo(); xxxx;}
+}
+class Client
+
+Client ..> Adapter
+
+@enduml

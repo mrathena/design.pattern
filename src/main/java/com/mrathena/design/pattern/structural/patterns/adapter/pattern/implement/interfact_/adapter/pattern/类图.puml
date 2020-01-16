@@ -1,0 +1,40 @@
+@startuml
+
+interface MouseClickEventListener {
+    void click();
+    void doubleClick();
+    void rightClick();
+}
+class MouseLeftSingleClickEventListener implements MouseClickEventListener {
+    void click();
+    void doubleClick();
+    void rightClick();
+}
+class MouseClickEvent {
+    - Mouse mouse;
+    + MouseClickEvent()
+    + MouseClickEvent(Mouse mouse)
+    + getMouse()
+    + setMouse(Mouse mouse)
+}
+class Mouse {
+    - Set<MouseClickEventListener> listenerSet = new HashSet<>()
+    + addMouseClickEventListener(MouseClickEventListener listener)
+    + void click()
+    + void doubleClick()
+    + void rightClick()
+}
+
+MouseClickEventListener ..> MouseClickEvent
+Mouse ..> MouseClickEvent
+Mouse *-- MouseClickEventListener
+Mouse ..> MouseClickEventListener
+MouseLeftSingleClickEventListener ..> MouseClickEvent
+
+class Client
+
+Client ..> Mouse
+Client ..> MouseClickEventListener
+Client ..> MouseLeftSingleClickEventListener
+
+@enduml
