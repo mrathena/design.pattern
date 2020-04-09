@@ -7,7 +7,7 @@ public class Test {
 
 	public static void main(String[] args) {
 		Singer singer = new SHESinger();
-		Singer proxy = Agent.getProxy(singer);
+		Singer proxy = Handler.getProxy(singer);
 		proxy.sing();
 	}
 

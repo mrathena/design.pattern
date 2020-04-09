@@ -7,11 +7,11 @@ import java.lang.reflect.Proxy;
 /**
  * @author mrathena on 2020/4/8 22:42
  */
-public class Agent implements InvocationHandler {
+public class Handler implements InvocationHandler {
 
 	private Singer singer;
 
-	public Agent(Singer singer) {
+	public Handler(Singer singer) {
 		this.singer = singer;
 	}
 
@@ -26,13 +26,14 @@ public class Agent implements InvocationHandler {
 	@Override
 	public Object invoke(Object target, Method method, Object[] args) throws Throwable {
 		before();
+		// 这里切记 invoke 的对象不是 target 而是 singer, 不然会出现循环调用, 堆栈溢出
 		Object result = method.invoke(singer, args);
 		after();
 		return result;
 	}
 
 	public static Singer getProxy(Singer singer) {
-		return (Singer) Proxy.newProxyInstance(singer.getClass().getClassLoader(), singer.getClass().getInterfaces(), new Agent(singer));
+		return (Singer) Proxy.newProxyInstance(singer.getClass().getClassLoader(), singer.getClass().getInterfaces(), new Handler(singer));
 	}
 
 
