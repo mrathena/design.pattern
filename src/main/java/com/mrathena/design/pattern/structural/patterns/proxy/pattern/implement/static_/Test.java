@@ -8,6 +8,7 @@ public class Test {
 	public static void main(String[] args) {
 		Singer agent = new Agent(new SHESinger());
 		agent.sing();
+
 	}
 
 }
