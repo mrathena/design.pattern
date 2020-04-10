@@ -5,6 +5,6 @@ package com.mrathena.design.pattern.creational.patterns.factory.method.pattern.i
  */
 public abstract class AbstractFactory {
 
-	abstract AbstractProduct getProduct();
+	public abstract AbstractProduct getProduct();
 
 }

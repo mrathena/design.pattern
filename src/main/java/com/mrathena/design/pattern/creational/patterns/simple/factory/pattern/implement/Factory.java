@@ -7,10 +7,10 @@ public class Factory {
 
 	public static AbstractProduct getProduct(String productName) {
 		switch (productName) {
-			case "A":
-				return new ConcreteProductA();
-			case "B":
-				return new ConcreteProductB();
+			case "1":
+				return new ConcreteProduct1();
+			case "2":
+				return new ConcreteProduct2();
 			default:
 				break;
 		}

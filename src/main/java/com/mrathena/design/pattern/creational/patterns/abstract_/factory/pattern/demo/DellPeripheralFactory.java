@@ -4,6 +4,7 @@ package com.mrathena.design.pattern.creational.patterns.abstract_.factory.patter
  * @author mrathena on 2020/1/8 18:32
  */
 public class DellPeripheralFactory extends AbstractPeripheralFactory {
+
 	@Override
 	public AbstractMouse getMouse() {
 		return new DellMouse();
@@ -13,4 +14,5 @@ public class DellPeripheralFactory extends AbstractPeripheralFactory {
 	public AbstractKeyboard getKeyboard() {
 		return new DellKeyboard();
 	}
+
 }
