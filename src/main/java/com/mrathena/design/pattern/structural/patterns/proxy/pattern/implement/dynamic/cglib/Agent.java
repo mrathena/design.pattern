@@ -15,19 +15,11 @@ public class Agent implements InvocationHandler {
 		this.singer = singer;
 	}
 
-	public void before() {
-		System.out.println("演出前谈合同");
-	}
-
-	public void after() {
-		System.out.println("演出后收钱");
-	}
-
 	@Override
 	public Object invoke(Object target, Method method, Object[] args) throws Throwable {
-		before();
+		System.out.println("演出前商谈");
 		Object result = method.invoke(singer, args);
-		after();
+		System.out.println("演出后分钱");
 		return result;
 	}
 

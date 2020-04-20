@@ -5,9 +5,6 @@ package com.mrathena.design.pattern.structural.patterns.proxy.pattern.implement.
  */
 public class Agent implements Singer {
 
-	/**
-	 * 自己New也可以, 传也可以
-	 */
 	private Singer singer;
 
 	public Agent(Singer singer) {
