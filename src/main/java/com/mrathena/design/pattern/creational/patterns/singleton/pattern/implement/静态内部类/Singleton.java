@@ -7,7 +7,19 @@ import java.io.Serializable;
  */
 public class Singleton implements Serializable {
 
-	private Singleton () {}
+	private Singleton () {
+		// 虽然提示存在问题,但是可以防反射
+		if (null != InnerSingleton.INSTANCE) {
+			throw new RuntimeException();
+		}
+	}
+
+	/**
+	 * 底层代码判断如果这个类重写了这个方法就会应用方法内部的实例,而不去反序列化一个新的实例
+	 */
+	private Object readResolve(){
+		return InnerSingleton.INSTANCE;
+	}
 
 	private static class InnerSingleton {
 		private static final Singleton INSTANCE = new Singleton();
